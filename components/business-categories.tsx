@@ -1,19 +1,24 @@
-"use client";
+"use client"
 
-import { useQuery } from '@apollo/client';
-import { gql } from '@apollo/client';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./carousel";
-import AppCard from "./app-card";
+import { useQuery } from '@apollo/client'
+import { gql } from '@apollo/client'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./carousel"
+import AppCard from "./app-card"
+import { useEffect, useState } from 'react'
 
 interface Medicine {
-  id: string;
-  name: string;
+  id: string
+  name: string
+  PartnerPrice: {
+    price: number
+    id: string
+  }[]
 }
 
 interface MedicinesData {
   Medicines: {
-    docs: Medicine[];
-  };
+    docs: Medicine[]
+  }
 }
 
 const MOST_ACCESSED_MEDICINES = gql`
@@ -22,10 +27,14 @@ const MOST_ACCESSED_MEDICINES = gql`
       docs {
         id
         name
+        PartnerPrice {
+          price
+          id
+        }
       }
     }
   }
-`;
+`
 
 function createSlug(name: string): string {
   return name
@@ -36,11 +45,43 @@ function createSlug(name: string): string {
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
-    .trim();
+    .trim()
+}
+
+const formatCurrency = (value: number): string => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value)
 }
 
 export default function BusinessCategories() {
-  const { loading, error, data } = useQuery<MedicinesData>(MOST_ACCESSED_MEDICINES);
+  const { loading, error, data } = useQuery<MedicinesData>(MOST_ACCESSED_MEDICINES)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const medicinesWithPrices = data?.Medicines.docs.map(medicine => {
+    const prices = medicine.PartnerPrice.map(pp => pp.price)
+    const minPrice = prices.length > 0 ? Math.min(...prices) : null
+    const maxPrice = prices.length > 0 ? Math.max(...prices) : null
+
+    return {
+      ...medicine,
+      minPrice,
+      maxPrice
+    }
+  })
 
   return (
     <section id="maisprocurados">
@@ -51,29 +92,21 @@ export default function BusinessCategories() {
           </h1>
         </div>
         <div className="relative flex min-h-[324px] items-center justify-center">
-          {/* <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-x-[200px] top-1/2 -z-10 h-px bg-gradient-to-r from-transparent via-[#01b1bc]/60 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-[82px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply before:absolute before:inset-y-0 before:w-24 before:animate-[line_10s_ease-in-out_infinite_both] before:bg-gradient-to-r before:via-[#01b1bc]"></div>
-          <div className="absolute inset-x-0 top-1/2 -z-10 h-px translate-y-[82px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply before:absolute before:inset-y-0 before:w-24 before:animate-[line_10s_ease-in-out_infinite_5s_both] before:bg-gradient-to-r before:via-[#01b1bc]"></div>
-          <div className="absolute inset-x-[300px] top-1/2 -z-10 h-px rotate-[20deg] bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-x-[300px] top-1/2 -z-10 h-px -rotate-[20deg] bg-gradient-to-r from-transparent via-gray-200 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-y-0 left-1/2 -z-10 w-px -translate-x-[216px] bg-gradient-to-b from-gray-200 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-y-0 left-1/2 -z-10 w-px translate-x-[216px] bg-gradient-to-t from-gray-200 to-transparent mix-blend-multiply"></div> */}
           <Carousel
             opts={{
               align: "start",
+              loop: true,
             }}
             className="w-full"
           >
-            <CarouselContent className='flex justify-center items-center'>
+            <CarouselContent className='-ml-1'>
               {loading ? (
-                <p className='z-20'>Carregando...</p>
+                <p className='z-20 text-center justify-center'>Carregando...</p>
               ) : error ? (
                 <p className='z-20'>Erro ao carregar medicamentos</p>
               ) : (
-                data?.Medicines.docs.map((medicine) => (
-                  <CarouselItem key={medicine.id} className="md:basis-1/2 lg:basis-1/3">
+                medicinesWithPrices?.map((medicine) => (
+                  <CarouselItem key={medicine.id} className="pl-1 md:basis-1/3 lg:basis-1/3">
                     <div className="p-1">
                       <AppCard
                         app={{
@@ -82,7 +115,13 @@ export default function BusinessCategories() {
                           link: `/medicines/${createSlug(medicine.name)}?id=${medicine.id}`,
                         }}
                       >
-                        De:  - Até:
+                        {medicine.minPrice !== null && medicine.maxPrice !== null ? (
+                          <>
+                            De: {formatCurrency(medicine.minPrice)} Até: {formatCurrency(medicine.maxPrice)}
+                          </>
+                        ) : (
+                          "Preço não disponível"
+                        )}
                       </AppCard>
                     </div>
                   </CarouselItem>
@@ -95,5 +134,5 @@ export default function BusinessCategories() {
         </div>
       </div>
     </section>
-  );
+  )
 }
