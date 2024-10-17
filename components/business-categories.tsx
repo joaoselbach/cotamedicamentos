@@ -85,9 +85,9 @@ export default function BusinessCategories() {
 
   return (
     <section id="maisprocurados">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 mb-12">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="mb-6 text-3xl lg:text-4xl  text-center font-bold md:text-4xl">
+          <h1 className="mb-6 text-3xl lg:text-4xl text-center font-bold md:text-4xl">
             Medicamentos mais pesquisados
           </h1>
         </div>
@@ -99,15 +99,15 @@ export default function BusinessCategories() {
             }}
             className="w-full"
           >
-            <CarouselContent className='-ml-1'>
+            <CarouselContent className='-ml-4 md:ml-0 overflow-visible'>
               {loading ? (
                 <p className='z-20 text-center justify-center'>Carregando...</p>
               ) : error ? (
                 <p className='z-20'>Erro ao carregar medicamentos</p>
               ) : (
                 medicinesWithPrices?.map((medicine) => (
-                  <CarouselItem key={medicine.id} className="pl-1 md:basis-1/3 lg:basis-1/3">
-                    <div className="p-1">
+                  <CarouselItem key={medicine.id} className={`pl-4 ${isMobile ? 'basis-[calc(100%-70px)]' : 'mr-[-3px] lg:basis-1/3'}`}>
+                    <div className={`${isMobile ? '' : 'p-1'}`}>
                       <AppCard
                         app={{
                           name: medicine.name,
@@ -128,8 +128,8 @@ export default function BusinessCategories() {
                 ))
               )}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="left-40 top-[340px] lg:top-[330px] lg:left-[44%]" />
+            <CarouselNext className="right-36 top-[340px] lg:top-[330px] lg:right-[44%]" />
           </Carousel>
         </div>
       </div>

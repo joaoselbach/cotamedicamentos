@@ -1,20 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AppCard({
-  app,
-  children,
-}: {
+interface AppCardProps {
   app: {
     name: string;
     image: string;
     link: string;
   };
   children: React.ReactNode;
-}) {
+}
+
+export default function AppCard({ app, children }: AppCardProps) {
   return (
-    <Link href={app.link} passHref>
-      <article className="justify-between min-h-[280px] group relative flex w-full flex-col rounded-2xl bg-[#fbfcfd] p-5 shadow-lg shadow-black/[0.03] transition before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-white">
+    <Link href={app.link} passHref className="block h-full">
+      <article className="justify-between h-full group relative flex w-full flex-col rounded-2xl bg-[#fbfcfd] p-5 shadow-lg shadow-black/[0.03] transition before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-white">
         <svg
           className="absolute right-5 top-5 transition-transform group-hover:rotate-45"
           xmlns="http://www.w3.org/2000/svg"
