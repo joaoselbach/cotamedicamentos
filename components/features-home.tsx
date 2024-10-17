@@ -96,11 +96,11 @@ export default function FeaturesHome() {
             </Accordion>
           </div>
           <a
-            className="mt-6 m-auto flex items-center gap-2 font-bold lg:max-w-[250px] btn group mb-4 w-full bg-green-500 hover:bg-green-600 text-white"
+            className="mt-6 m-auto flex items-center gap-2 font-bold lg:max-w-[280px] btn group mb-4 w-full bg-green-500 hover:bg-green-600 text-white"
             href="https://wa.me/5511934201262?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20para%20achar%20o%20meu%20medicamento!"
           >
             <FaWhatsapp size={20} />
-            Mudar para fale com nosso especialista{" "}
+            Fale com nosso especialista{" "}
           </a>
         </div>
       </div>
