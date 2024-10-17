@@ -100,7 +100,7 @@ export default function FeaturesHome() {
             href="https://wa.me/5511934201262?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20para%20achar%20o%20meu%20medicamento!"
           >
             <FaWhatsapp size={20} />
-            Peça seu orçamento agora{" "}
+            Mudar para fale com nosso especialista{" "}
           </a>
         </div>
       </div>
