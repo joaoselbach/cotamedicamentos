@@ -5,15 +5,14 @@ export default function FeaturesPlanet() {
     <section id="contact" className="relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          {/* Section header */}
           <div className="mx-auto max-w-3xl pb-16 text-center md:pb-20">
             <h2 className="text-3xl font-bold text-gray-200 md:text-4xl">
               Solicite um Orçamento para demanda judicial
             </h2>
             <p className="text-gray-400">Deixe suas informações e receba uma cotação dos medicamentos que você precisa.</p>
           </div>
-          <div className="flex pb-16 md:pb-20" data-aos="zoom-y-out">
-            <div className="max-w-[50%]">
+          <div className="flex lg:flex-row flex-col pb-16 md:pb-20" data-aos="zoom-y-out">
+            <div className="lg:max-w-[50%]">
               <form>
                 <div className="space-y-4">
                   <div>
@@ -90,10 +89,8 @@ export default function FeaturesPlanet() {
               </div>
             </div>
             <div className="max-w-[50%]">
-              a
             </div>
           </div>
-          {/* Grid */}
           <div className="grid overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:p-6 [&>*]:before:absolute [&>*]:before:bg-gray-800 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-gray-800 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] md:[&>*]:p-10">
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">

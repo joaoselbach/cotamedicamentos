@@ -6,23 +6,6 @@ import SearchModal from "@/components/search-modal";
 export default function SearchDialog() {
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "/") {
-        setSearchModalOpen(true);
-      }
-      if (event.metaKey && event.key === "k") {
-        setSearchModalOpen(true);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
   return (
     <div data-aos="zoom-y-out"
       data-aos-delay={200}>

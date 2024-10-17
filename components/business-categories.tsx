@@ -87,7 +87,7 @@ export default function BusinessCategories() {
     <section id="maisprocurados">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="mb-6 text-5xl font-bold md:text-4xl">
+          <h1 className="mb-6 text-3xl lg:text-4xl  text-center font-bold md:text-4xl">
             Medicamentos mais pesquisados
           </h1>
         </div>

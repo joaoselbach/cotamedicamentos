@@ -15,7 +15,7 @@ export default function FeaturesHome() {
             <h2 className="mb-1 text-3xl font-bold md:text-4xl">
               Precisa de Orientação Jurídica?
             </h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-500 mb-4">
               Saiba como garantir seus direitos e acessar os medicamentos que você precisa por meio de processos judiciais. Nossa equipe de especialistas está pronta para ajudar.
             </p>
           </div>
