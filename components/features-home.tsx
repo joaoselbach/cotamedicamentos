@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import Accordion from "./accordion";
 
 export default function FeaturesHome() {
@@ -94,7 +95,13 @@ export default function FeaturesHome() {
               <p className="px-4 pb-3">Portanto, qualquer pessoa pode solicitar medicamentos pelo SUS, desde que siga os procedimentos adequados e tenha a documentação necessária.</p>
             </Accordion>
           </div>
-
+          <a
+            className="mt-6 m-auto flex items-center gap-2 font-bold lg:max-w-[250px] btn group mb-4 w-full bg-green-500 hover:bg-green-600 text-white"
+            href="https://wa.me/5511934201262?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20para%20achar%20o%20meu%20medicamento!"
+          >
+            <FaWhatsapp size={20} />
+            Peça seu orçamento agora{" "}
+          </a>
         </div>
       </div>
     </section>

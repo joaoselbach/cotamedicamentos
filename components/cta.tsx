@@ -33,7 +33,7 @@ export default function Cta() {
               Nossos Parceiros
             </h2>
             <div className="w-full flex lg:flex-wrap justify-between lg:justify-center items-center gap-8 lg:gap-28">
-              <div className="w-full max-w-[100px] lg:max-w-[200px]">
+              <div className="w-full max-w-[100px] lg:max-w-[120px]">
                 <Image
                   src="/images/aliria.jpeg"
                   alt="Aliria Logo"
@@ -43,7 +43,7 @@ export default function Cta() {
                   objectFit="contain"
                 />
               </div>
-              <div className="w-full  max-w-[120px] lg:max-w-[200px]">
+              <div className="w-full  max-w-[120px] lg:max-w-[120px]">
                 <Image
                   src="/images/integralmed.png"
                   alt="Integralmed Logo"
@@ -53,7 +53,7 @@ export default function Cta() {
                   objectFit="contain"
                 />
               </div>
-              <div className="w-full max-w-[100px] lg:max-w-[200px]">
+              <div className="w-full max-w-[100px] lg:max-w-[120px]">
                 <Image
                   src="/images/farmaclass.png"
                   alt="Farmaclass Logo"
