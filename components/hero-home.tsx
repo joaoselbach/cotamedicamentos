@@ -75,7 +75,7 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Receba de orçamento de forma rápida, simples e gratuita.
+                Receba seu orçamento de forma rápida, simples e gratuita.
               </p>
               <SearchDialog />
 
