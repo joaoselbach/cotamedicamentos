@@ -56,21 +56,19 @@ export default function TestimonialsCarousel() {
         </div>
         <div className="relative mx-auto flex max-w-[94rem] justify-center">
           <div
-            className="absolute bottom-20 -z-10 -translate-x-36"
+            className="absolute bottom-40 -z-10 -translate-x-36 opacity-60"
             aria-hidden="true"
           >
             <div className="h-80 w-80 rounded-full bg-gradient-to-tr from-[#01b1bc] to-gray-900 opacity-30 blur-[160px] will-change-[filter]" />
           </div>
-          <div className="absolute -bottom-10 -z-10" aria-hidden="true">
+          <div className="absolute bottom-40 -z-10 opacity-60" aria-hidden="true">
             <div className="h-80 w-80 rounded-full bg-[#01b1bc] opacity-40 blur-[160px] will-change-[filter]" />
           </div>
-          <div className="absolute bottom-0 -z-10" aria-hidden="true">
+          <div className="absolute bottom-40 -z-10 opacity-60" aria-hidden="true">
             <div className="h-56 w-56 rounded-full border-[20px] border-white blur-[20px] will-change-[filter]" />
           </div>
-          {/* Row */}
           <div className="group inline-flex w-full flex-nowrap py-12 [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)] md:py-20">
             <div className="flex animate-[infinite-scroll_60s_linear_infinite] items-start justify-center group-hover:[animation-play-state:paused] md:justify-start [&>*]:mx-3">
-              {/* Items */}
               {testimonials.map((testimonial, index) => (
                 <Testimonial
                   key={index}
@@ -85,7 +83,6 @@ export default function TestimonialsCarousel() {
               className="flex animate-[infinite-scroll_60s_linear_infinite] items-start justify-center group-hover:[animation-play-state:paused] md:justify-start [&>*]:mx-3"
               aria-hidden="true"
             >
-              {/* Items */}
               {testimonials.map((testimonial, index) => (
                 <Testimonial
                   key={index}
