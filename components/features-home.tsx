@@ -11,7 +11,7 @@ export default function FeaturesHome() {
         <div className="h-80 w-80 rounded-full bg-gradient-to-tr from-[#01b1bc] to-gray-900 opacity-40 blur-[160px] will-change-[filter]" />
       </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
+        <div className="py-12">
           <div className="mx-auto max-w-3xl pb-2 text-center md:pb-8">
             <h2 className="mb-1 text-3xl font-bold md:text-4xl">
               Precisa de Orientação Jurídica?

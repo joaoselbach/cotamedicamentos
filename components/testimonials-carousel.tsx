@@ -25,21 +25,21 @@ export default function TestimonialsCarousel() {
       channel: "Google",
     },
     {
-      img: TestimonialImg03,
-      name: "Nome",
+      img: TestimonialImg01,
+      name: "Ana Martins",
       username: "@usuario",
-      date: "04 de Março, 2024",
+      date: "19 de Maio 19, 2024",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Eu não sei como teria conseguido o tratamento necessário sem a ajuda do Cota Medicamentos. Desde o primeiro contato, eles foram extremamente atenciosos e profissionais. Eu estava enfrentando dificuldades para encontrar um medicamento de alto custo para uma demanda judicial, e a equipe não apenas me orientou sobre o processo, mas também buscou as melhores opções de preço e fornecimento. Graças a eles, consegui o medicamento a tempo, com muito menos estresse. O atendimento personalizado fez toda a diferença, e sou muito grato por toda a ajuda!",
       channel: "Google",
     },
     {
-      img: TestimonialImg04,
+      img: TestimonialImg02,
       name: "Nome",
       username: "@usuario",
-      date: "15 de Janeiro, 2024",
+      date: "12 de Abril, 2024",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Minha mãe estava internada e eu precisava de orientações sobre como conseguir o medicamento dela, já que eu não tinha condições de comprar e nem sabia por onde começar para solicitar pelo SUS. A equipe da Cota Medicamentos me atendeu com muita atenção, explicando todo o processo e me orientando em cada etapa para conseguir o medicamento pelo SUS. Foram extremamente cuidadosos comigo e com a minha mãe. Que Deus abençoe a vida de todos eles!",
       channel: "Google",
     },
   ];
@@ -48,11 +48,9 @@ export default function TestimonialsCarousel() {
     <section id="depoimentos" className="relative before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:h-[120%] before:bg-gradient-to-b before:from-gray-100">
       <div className="pt-12 md:pt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">
-              Depoimentos
-            </h2>
-          </div>
+          <h2 className="text-3xl font-bold md:text-4xl text-center">
+            Depoimentos
+          </h2>
         </div>
         <div className="relative mx-auto flex max-w-[94rem] justify-center">
           <div

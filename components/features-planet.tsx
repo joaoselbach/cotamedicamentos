@@ -4,14 +4,14 @@ export default function FeaturesPlanet() {
   return (
     <section id="contact" className="relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          <div className="mx-auto max-w-3xl pb-16 text-center md:pb-20">
+        <div className="md:py-12">
+          <div className="mx-auto max-w-3xl pb-12 text-center md:pb-14">
             <h2 className="text-3xl font-bold text-gray-200 md:text-4xl">
               Solicite um Orçamento para demanda judicial
             </h2>
             <p className="text-gray-400">Deixe suas informações e receba uma cotação dos medicamentos que você precisa.</p>
           </div>
-          <div className="flex lg:flex-row flex-col pb-16 md:pb-20" data-aos="zoom-y-out">
+          <div className="flex lg:flex-row flex-col pb-12 md:pb-14" data-aos="zoom-y-out">
             <div className="lg:max-w-[50%]">
               <form>
                 <div className="space-y-4">

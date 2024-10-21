@@ -9,7 +9,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 
 export const metadata: Metadata = {
   title: "Início - Cota Medicamentos",
-  description: "Page description",
+  description: "Receba seu orçamento de forma rápida, simples e gratuita.",
 }
 
 function FloatingWhatsAppButton() {

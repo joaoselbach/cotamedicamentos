@@ -3,8 +3,8 @@ import PageIllustration from "@/components/page-illustration";
 import PostItem from "@/components/post-item";
 
 export const metadata = {
-  title: "Blog - Simple",
-  description: "Page description",
+  title: "Blog - Cota Medicamentos",
+  description: "Receba seu orçamento de forma rápida, simples e gratuita.",
 };
 
 export default function Blog() {

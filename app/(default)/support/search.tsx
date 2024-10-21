@@ -28,12 +28,7 @@ export default function SearchDialog() {
             <path d="m14.707 13.293-1.414 1.414-2.4-2.4 1.414-1.414 2.4 2.4ZM6.8 12.6A5.8 5.8 0 1 1 6.8 1a5.8 5.8 0 0 1 0 11.6Zm0-2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6Z" />
           </svg>
           <span>
-            Procure o nome do Medicamento
-            <span className="hidden sm:inline">
-              {" "}
-              (Besponsa, etc.){" "}
-            </span>
-            …
+            Procure o nome do Medicamento…
           </span>
         </div>
         <div className="ml-3 flex gap-1">

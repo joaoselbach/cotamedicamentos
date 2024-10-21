@@ -18,7 +18,7 @@ export default function HeroHome() {
     <section className="relative">
       <PageIllustration />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex lg:flex-row flex-col-reverse pb-12 pt-20 md:pb-20 md:pt-40">
+        <div className="flex lg:flex-row flex-col-reverse pb-12 pt-20 md:pb-14 md:pt-40">
           <div className="w-full lg:max-w-[50%] pb-12 text-center lg:text-left md:pb-16">
             <div
               className="mb-1 lg:mb-6 "

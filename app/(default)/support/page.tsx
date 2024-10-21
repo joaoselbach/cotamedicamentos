@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Support - Simple",
-  description: "Page description",
+  title: "Support - Cota Medicamentos",
+  description: "Receba seu orçamento de forma rápida, simples e gratuita.",
 };
 
 import Hero from "./hero";

@@ -24,7 +24,7 @@ export default function Header() {
               </li>
               <li className="px-3 py-1">
                 <Link
-                  href="#maisprocurados"
+                  href="/#maisprocurados"
                   className="flex items-center text-gray-500 transition hover:text-gray-900"
                 >
                   Mais procurados
@@ -32,7 +32,7 @@ export default function Header() {
               </li>
               <li className="px-3 py-1">
                 <Link
-                  href="#orientacao"
+                  href="/#orientacao"
                   className="flex items-center text-gray-500 transition hover:text-gray-900"
                 >
                   Orientação Jurídica
@@ -40,7 +40,7 @@ export default function Header() {
               </li>
               <li className="px-3 py-1">
                 <Link
-                  href="#depoimentos"
+                  href="/#depoimentos"
                   className="flex items-center text-gray-500 transition hover:text-gray-900"
                 >
                   Depoimentos
